@@ -76,3 +76,23 @@ Recalculate the code phase and carrier frequency.
 ### 1.6 Result Storage
 Store the carrier frequency, code phase, and peak measurement of the detected satellite signal in `acqResults`.
 If no signal is detected, set the carrier frequency to 0.
+
+## Task 2 – Tracking
+
+The tracking phase involves adapting the tracking loop, specifically the Delay-Locked Loop (DLL), to maintain a steady lock on the satellite signals. Multiple correlators are implemented to generate correlation plots, allowing for an in-depth analysis of tracking performance. The impact of urban interference, such as multipath and signal blockage, is examined by analyzing the correlation peaks. In urban environments, reduced signal strength and distorted correlation functions can negatively affect tracking stability.
+
+### 2.1 Analysis of Tracking Performance
+
+This report analyzes the tracking performance of different satellites based on Carrier-to-Noise Ratio (C/N₀) and DLL (Delay Lock Loop) discriminator outputs. The Carrier-to-Noise Ratio (C/N₀) provides insights into signal strength and quality, while DLL discriminator outputs indicate tracking accuracy. Both parameters are essential in evaluating how well a GNSS receiver tracks satellite signals, especially in urban environments, where multipath and signal obstructions affect performance. The uploaded C/N₀ figures show the variation of signal quality over time for different satellites. Below is a summary of observations:
+
+| Satellite | C/N₀ Performance | Observations |
+|-----------|------------------|--------------|
+| Satellite 3 | Fluctuating (30-40 dB-Hz) | Significant dips indicate weak signal or obstruction. |
+| Satellite 4 | Moderate (30-40 dB-Hz) | Some variations but relatively stable tracking. |
+| Satellite 8 | Weak (20-35 dB-Hz) | Frequent drops suggest interference or multipath. |
+| Satellite 16 | Good (32-48 dB-Hz) | Strong and stable signal reception. |
+| Satellite 22 | Moderate (30-40 dB-Hz) | Some fluctuations but remains in an acceptable range. |
+| Satellite 26 | Weak (20-35 dB-Hz) | Low signal strength with occasional deep dips. |
+| Satellite 27 | Strong (35-45 dB-Hz) | Good signal strength, minor fluctuations. |
+| Satellite 31 | Moderate (30-40 dB-Hz) | Some instability but mostly stable tracking. |
+| Satellite 32 | Weak (28-38 dB-Hz) | High fluctuations, indicating possible urban interference. |
