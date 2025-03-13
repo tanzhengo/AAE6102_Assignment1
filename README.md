@@ -17,3 +17,15 @@ GPS_L1_CA/
     ├── Opensky.bin
     └── ...
 ```
+#### 1. Run the code
+After that, run the code `init.m`. When you see the following message displayed in the terminal, enter `1` and press Enter.
+
+```
+-------------------------------
+
+Probing data (data/Urban.dat)...
+  Raw IF data plotted 
+  (run setSettings or change settings in "initSettings.m" to reconfigure)
+ 
+Enter "1" to initiate GNSS processing or "0" to exit : 
+```
