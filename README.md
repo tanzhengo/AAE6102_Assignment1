@@ -37,14 +37,14 @@ The first step in GNSS signal processing is acquisition, where Intermediate Freq
 ### 1.1 Signal preprocessing
 Resampling:
 
--If the sampling rate is too high, the function will resample the signal to speed up the acquisition process.
--The signal is converted to a lower sampling rate through bandpass filtering and downsampling.
--The resampled signal will `update settings.samplingFreq` and `settings.IF`.
+- If the sampling rate is too high, the function will resample the signal to speed up the acquisition process.
+- The signal is converted to a lower sampling rate through bandpass filtering and downsampling.
+- The resampled signal will `update settings.samplingFreq` and `settings.IF`.
 
 Signal segmentation:
 
--The input signal is divided into two 1 ms signal segments `signal1` and `signal2` for subsequent correlation operations.
--Calculate the zero-mean version of the signal `signal0DC` to remove the DC component.
+- The input signal is divided into two 1 ms signal segments `signal1` and `signal2` for subsequent correlation operations.
+- Calculate the zero-mean version of the signal `signal0DC` to remove the DC component.
 
 ### 1.2 Initialization parameters
 Calculate the number of sampling points `samplesPerCode` for each pseudo-random code (C/A code).
@@ -127,14 +127,14 @@ Key Observations:
 In urban environments, GNSS signals are susceptible to multiple interferences that can significantly affect the quality of the correlation peak, thereby reducing the accuracy and reliability of signal tracking.
 
 #### 2.2.1 Common interference in urban environments includes:
-Multipath interference:
+- Multipath interference:
 After the signal is reflected by buildings, the ground, etc., it is superimposed on the direct signal, resulting in distortion of the correlation peak.
 Multipath signals will introduce additional correlation peaks, or make the main peak wider and offset.
-Blockage:
+- Blockage:
 Obstacles such as tall buildings and bridges will block satellite signals, resulting in a decrease in signal strength.
 Blockage will reduce the amplitude of the correlation peak or even cause the signal to be completely lost.
 #### 2.2.2 Effect of interference on correlation peak
-Effect of multipath interference
+- Effect of multipath interference
 Correlation peak distortion:
 Multipath signals will introduce additional correlation peaks, causing the main peak to become wider or offset.
 The symmetry of the correlation peak is destroyed, affecting the estimation accuracy of the code phase and carrier phase.
@@ -142,7 +142,7 @@ Error of early-late correlator:
 Multipath signals will cause the output of the early-late correlator to be asymmetric, increasing the code tracking error.
 Change in peak amplitude:
 The superposition of multipath signals may cause the amplitude of the correlation peak to fluctuate.
-Effect of shielding
+- Effect of shielding
 Peak amplitude reduction:
 When the signal is shielded, the amplitude of the correlation peak decreases significantly, which may cause signal loss.
 Reduced signal-to-noise ratio:
@@ -150,6 +150,6 @@ Shielding will reduce signal strength and increase the impact of noise on the co
 Tracking interruption:
 If the signal is completely shielded, the correlation peak may disappear, causing the tracking loop to lose lock.
 
--Best Tracking Performance: Satellites 16 and 27 (High C/N₀, stable DLL).
--Worst Tracking Performance: Satellites 8, 26, and 32 (Low C/N₀, erratic DLL).
--Moderate Tracking: Satellites 3, 4, 22, and 31 (fluctuating performance, likely urban interference effects).
+- Best Tracking Performance: Satellites 16 and 27 (High C/N₀, stable DLL).
+- Worst Tracking Performance: Satellites 8, 26, and 32 (Low C/N₀, erratic DLL).
+- Moderate Tracking: Satellites 3, 4, 22, and 31 (fluctuating performance, likely urban interference effects).
