@@ -127,6 +127,8 @@ The tracking phase involves adapting the tracking loop, specifically the Delay-L
 
 This report analyzes the tracking performance of different satellites based on Carrier-to-Noise Ratio (C/N₀) and DLL (Delay Lock Loop) discriminator outputs. The Carrier-to-Noise Ratio (C/N₀) provides insights into signal strength and quality, while DLL discriminator outputs indicate tracking accuracy. Both parameters are essential in evaluating how well a GNSS receiver tracks satellite signals, especially in urban environments, where multipath and signal obstructions affect performance. The uploaded C/N₀ figures show the variation of signal quality over time for different satellites. Below is a summary of observations:
 
+<div align="center">
+
 | Satellite | C/N₀ Performance | Observations |
 |-----------|------------------|--------------|
 | Satellite 3 | Fluctuating (30-40 dB-Hz) | Significant dips indicate weak signal or obstruction. |
@@ -139,6 +141,8 @@ This report analyzes the tracking performance of different satellites based on C
 | Satellite 31 | Moderate (30-40 dB-Hz) | Some instability but mostly stable tracking. |
 | Satellite 32 | Weak (28-38 dB-Hz) | High fluctuations, indicating possible urban interference. |
 
+</div>
+
 Key Takeaways from C/N₀ Analysis:
 
 -Satellites 16 and 27 have the best tracking conditions with strong C/N₀ values (above 35 dB-Hz) and relatively stable signals.
@@ -146,7 +150,8 @@ Key Takeaways from C/N₀ Analysis:
 -Satellites 3, 4, 22, and 31 maintain moderate signal strength, showing fluctuations but generally within an acceptable range for tracking.
 
 By comparing C/N₀ trends with DLL discriminator outputs, we can evaluate how signal quality affects tracking accuracy.
-
+<div align="center">
+    
 | Satellite | DLL Stability | C/N₀ Strength | Impact on Tracking |
 |-----------|---------------|----------------|--------------------|
 | 3         | Poor (high fluctuations) | Moderate to weak (30-40 dB-Hz) | Tracking errors due to signal loss. |
@@ -159,6 +164,7 @@ By comparing C/N₀ trends with DLL discriminator outputs, we can evaluate how s
 | 31        | Moderate | Moderate (30-40 dB-Hz) | Some fluctuations, but mostly stable. |
 | 32        | Poor (high variations) | Weak (28-38 dB-Hz) | Strong effects of urban interference. |
 
+</div>
 Key Observations:
 
 -Strong C/N₀ (above 35 dB-Hz) correlates with stable DLL tracking (e.g., Satellites 16 and 27).
