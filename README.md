@@ -79,9 +79,8 @@ If no signal is detected, set the carrier frequency to 0.
 
 This table shows the tracking status and parameters of each channel in the GNSS receiver. The following is a detailed analysis of the table content:
 
-*=========*=====*===============*===========*=============*========*
 | Channel | PRN |   Frequency   |  Doppler  | Code Offset | Status |
-*=========*=====*===============*===========*=============*========*
+|-----------|------------------|--------------|--------------|--------------|--------------|
 |       1 |   1 |  1.20258e+03 |    1203   |      3329   |     T  |
 |       2 |   3 |  4.28963e+03 |    4290   |     25173   |     T  |
 |       3 |  11 |  4.09126e+02 |     409   |      1155   |     T  |
@@ -94,7 +93,6 @@ This table shows the tracking status and parameters of each channel in the GNSS 
 |      10 | --- |  ------------ |   -----   |    ------   |   Off  |
 |      11 | --- |  ------------ |   -----   |    ------   |   Off  |
 |      12 | --- |  ------------ |   -----   |    ------   |   Off  |
-*=========*=====*===============*===========*=============*========*
 
 Table structure
 The table is divided into 6 columns, each of which has the following meaning:
