@@ -78,7 +78,10 @@ Store the carrier frequency, code phase, and peak measurement of the detected sa
 If no signal is detected, set the carrier frequency to 0.
 
 The results of data acquisition are shown in the figure:
-![image](https://github.com/tanzhengo/AAE6102_Assignment1/tree/7c8d75cda87c14da4b760dada52b0191b58fa23a/figure/1.jpg)
+
+<p align="center">
+    <img src="/figure/1.jpg" alt="data acquisition" />
+</p>
 
 This table shows the tracking status and parameters of each channel in the GNSS receiver. The following is a detailed analysis of the table content:
 
