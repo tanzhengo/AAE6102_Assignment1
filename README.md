@@ -97,17 +97,17 @@ This table shows the tracking status and parameters of each channel in the GNSS 
 Table structure
 The table is divided into 6 columns, each of which has the following meaning:
 
-Channel: Channel number, indicating a tracking channel in the receiver.
+`Channel`: Channel number, indicating a tracking channel in the receiver.
 
-PRN: Pseudo-random noise code number (PRN) of the satellite, used to identify the satellite.
+`PRN`: Pseudo-random noise code number (PRN) of the satellite, used to identify the satellite.
 
-Frequency: Carrier frequency (unit: Hz), indicating the carrier frequency currently tracked by the receiver.
+`Frequency`: Carrier frequency (unit: Hz), indicating the carrier frequency currently tracked by the receiver.
 
-Doppler: Doppler shift (unit: Hz), indicating the frequency offset caused by the relative motion between the satellite and the receiver.
+`Doppler`: Doppler shift (unit: Hz), indicating the frequency offset caused by the relative motion between the satellite and the receiver.
 
-Code Offset: Code phase offset (unit: chip), indicating the code phase currently tracked by the receiver.
+`Code Offset`: Code phase offset (unit: chip), indicating the code phase currently tracked by the receiver.
 
-Status: Channel status, T means tracking (Tracking), Off means the channel is not in use.
+`Status`: Channel status, T means tracking (Tracking), Off means the channel is not in use.
 
 ## Task 2 – Tracking
 
