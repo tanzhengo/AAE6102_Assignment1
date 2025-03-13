@@ -155,3 +155,31 @@ If the signal is completely shielded, the correlation peak may disappear, causin
 - Best Tracking Performance: Satellites 16 and 27 (High C/N₀, stable DLL).
 - Worst Tracking Performance: Satellites 8, 26, and 32 (Low C/N₀, erratic DLL).
 - Moderate Tracking: Satellites 3, 4, 22, and 31 (fluctuating performance, likely urban interference effects).
+
+## Task 3 – Navigation Data Decoding
+Navigation Data Decoding is one of the key steps in GNSS receivers, which is used to extract navigation data bits from the tracked satellite signals. Navigation data contains key data such as satellite ephemeris, time information, satellite health status, etc. These data are the basis for calculating user position, velocity and time (PVT).
+
+## Task 4 – Position and Velocity Estimation
+
+Input:
+`trackResults`: Tracking results, including the correlator output, code phase, carrier frequency, etc. for each channel.
+`settings`: Receiver configuration parameters, such as sampling rate, navigation solution period, altitude mask, etc.
+
+Output:
+`navSolutions`: Navigation solution results, including pseudorange, receiver position, velocity, time, etc.
+`eph`: Satellite ephemeris decoded from navigation data.
+
+Pseudorange Measurements: These are obtained from the tracking phase and are crucial for determining the user's position and velocity. They are used as inputs to the WLS algorithm.
+Weighted Least Squares (WLS) Algorithm: This algorithm is implemented in the WLSPos.m file. It calculates the user's position and velocity by minimizing the weighted sum of squared differences between the measured and predicted pseudoranges.
+Position and Velocity Estimation: The receiver's position and velocity are calculated using the designed code in PosNavigation.m. The results are stored in navResults.mat, which includes:
+WLSX, WLSY, WLSZ: Estimated positions in the ECEF coordinate system.
+Vx, Vy, Vz: Estimated velocities in the ECEF coordinate system.
+Speed: Magnitude of the velocity vector.
+Visualization: The estimated trajectory is visualized by plotting the user's position and velocity. This helps in understanding the movement pattern and assessing the accuracy of the estimation.
+Comparison with Ground Truth: The estimated positions are converted to geodetic coordinates (latitude and longitude) and compared with known ground truth values to evaluate accuracy.
+Impact of Multipath Effects: The analysis discusses how multipath effects, caused by signal reflections, impact the WLS solution in different environments:
+Open-Sky Environment: Minimal multipath effects due to dominant line-of-sight signals. The WLS estimation error is small (~5.5 meters).
+Urban Environment: Significant multipath effects due to reflections from buildings, leading to larger errors (~14 meters). Non-line-of-sight reception and distorted signals degrade positioning accuracy.
+
+## Task 5 – Kalman Filter-Based Positioning
+
