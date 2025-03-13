@@ -96,3 +96,60 @@ This report analyzes the tracking performance of different satellites based on C
 | Satellite 27 | Strong (35-45 dB-Hz) | Good signal strength, minor fluctuations. |
 | Satellite 31 | Moderate (30-40 dB-Hz) | Some instability but mostly stable tracking. |
 | Satellite 32 | Weak (28-38 dB-Hz) | High fluctuations, indicating possible urban interference. |
+
+Key Takeaways from C/N₀ Analysis:
+
+-Satellites 16 and 27 have the best tracking conditions with strong C/N₀ values (above 35 dB-Hz) and relatively stable signals.
+-Satellites 8, 26, and 32 exhibit the weakest signals, with frequent dips below 30 dB-Hz, indicating high interference or signal blockage.
+-Satellites 3, 4, 22, and 31 maintain moderate signal strength, showing fluctuations but generally within an acceptable range for tracking.
+
+By comparing C/N₀ trends with DLL discriminator outputs, we can evaluate how signal quality affects tracking accuracy.
+
+| Satellite | DLL Stability | C/N₀ Strength | Impact on Tracking |
+|-----------|---------------|----------------|--------------------|
+| 3         | Poor (high fluctuations) | Moderate to weak (30-40 dB-Hz) | Tracking errors due to signal loss. |
+| 4         | Moderate | Moderate (30-40 dB-Hz) | Occasional tracking instability. |
+| 8         | Poor (high variations) | Weak (20-35 dB-Hz) | Severe multipath and urban interference. |
+| 16        | Stable | Strong (32-48 dB-Hz) | Good tracking performance. |
+| 22        | Moderate | Moderate (30-40 dB-Hz) | Some signal loss but reasonable tracking. |
+| 26        | Poor (high variations) | Weak (20-35 dB-Hz) | Frequent tracking errors due to low signal strength. |
+| 27        | Stable | Strong (35-45 dB-Hz) | Reliable tracking. |
+| 31        | Moderate | Moderate (30-40 dB-Hz) | Some fluctuations, but mostly stable. |
+| 32        | Poor (high variations) | Weak (28-38 dB-Hz) | Strong effects of urban interference. |
+
+Key Observations:
+
+-Strong C/N₀ (above 35 dB-Hz) correlates with stable DLL tracking (e.g., Satellites 16 and 27).
+-Low C/N₀ (below 30 dB-Hz) results in erratic DLL behavior, indicating difficulty maintaining signal lock (e.g., Satellites 8, 26, and 32).
+-Satellites with moderate C/N₀ (30-40 dB-Hz) experience occasional tracking issues, suggesting intermittent urban interference.
+
+### 2.2 Summary of Findings:
+In urban environments, GNSS signals are susceptible to multiple interferences that can significantly affect the quality of the correlation peak, thereby reducing the accuracy and reliability of signal tracking.
+
+#### 2.2.1 Common interference in urban environments includes:
+Multipath interference:
+After the signal is reflected by buildings, the ground, etc., it is superimposed on the direct signal, resulting in distortion of the correlation peak.
+Multipath signals will introduce additional correlation peaks, or make the main peak wider and offset.
+Blockage:
+Obstacles such as tall buildings and bridges will block satellite signals, resulting in a decrease in signal strength.
+Blockage will reduce the amplitude of the correlation peak or even cause the signal to be completely lost.
+#### 2.2.2 Effect of interference on correlation peak
+Effect of multipath interference
+Correlation peak distortion:
+Multipath signals will introduce additional correlation peaks, causing the main peak to become wider or offset.
+The symmetry of the correlation peak is destroyed, affecting the estimation accuracy of the code phase and carrier phase.
+Error of early-late correlator:
+Multipath signals will cause the output of the early-late correlator to be asymmetric, increasing the code tracking error.
+Change in peak amplitude:
+The superposition of multipath signals may cause the amplitude of the correlation peak to fluctuate.
+Effect of shielding
+Peak amplitude reduction:
+When the signal is shielded, the amplitude of the correlation peak decreases significantly, which may cause signal loss.
+Reduced signal-to-noise ratio:
+Shielding will reduce signal strength and increase the impact of noise on the correlation peak.
+Tracking interruption:
+If the signal is completely shielded, the correlation peak may disappear, causing the tracking loop to lose lock.
+
+-Best Tracking Performance: Satellites 16 and 27 (High C/N₀, stable DLL).
+-Worst Tracking Performance: Satellites 8, 26, and 32 (Low C/N₀, erratic DLL).
+-Moderate Tracking: Satellites 3, 4, 22, and 31 (fluctuating performance, likely urban interference effects).
