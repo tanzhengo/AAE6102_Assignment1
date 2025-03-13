@@ -77,6 +77,40 @@ Recalculate the code phase and carrier frequency.
 Store the carrier frequency, code phase, and peak measurement of the detected satellite signal in `acqResults`.
 If no signal is detected, set the carrier frequency to 0.
 
+This table shows the tracking status and parameters of each channel in the GNSS receiver. The following is a detailed analysis of the table content:
+
+*=========*=====*===============*===========*=============*========*
+| Channel | PRN |   Frequency   |  Doppler  | Code Offset | Status |
+*=========*=====*===============*===========*=============*========*
+|       1 |   1 |  1.20258e+03 |    1203   |      3329   |     T  |
+|       2 |   3 |  4.28963e+03 |    4290   |     25173   |     T  |
+|       3 |  11 |  4.09126e+02 |     409   |      1155   |     T  |
+|       4 |  18 |  -3.22342e+02 |    -322   |     10581   |     T  |
+|       5 | --- |  ------------ |   -----   |    ------   |   Off  |
+|       6 | --- |  ------------ |   -----   |    ------   |   Off  |
+|       7 | --- |  ------------ |   -----   |    ------   |   Off  |
+|       8 | --- |  ------------ |   -----   |    ------   |   Off  |
+|       9 | --- |  ------------ |   -----   |    ------   |   Off  |
+|      10 | --- |  ------------ |   -----   |    ------   |   Off  |
+|      11 | --- |  ------------ |   -----   |    ------   |   Off  |
+|      12 | --- |  ------------ |   -----   |    ------   |   Off  |
+*=========*=====*===============*===========*=============*========*
+
+Table structure
+The table is divided into 6 columns, each of which has the following meaning:
+
+Channel: Channel number, indicating a tracking channel in the receiver.
+
+PRN: Pseudo-random noise code number (PRN) of the satellite, used to identify the satellite.
+
+Frequency: Carrier frequency (unit: Hz), indicating the carrier frequency currently tracked by the receiver.
+
+Doppler: Doppler shift (unit: Hz), indicating the frequency offset caused by the relative motion between the satellite and the receiver.
+
+Code Offset: Code phase offset (unit: chip), indicating the code phase currently tracked by the receiver.
+
+Status: Channel status, T means tracking (Tracking), Off means the channel is not in use.
+
 ## Task 2 – Tracking
 
 The tracking phase involves adapting the tracking loop, specifically the Delay-Locked Loop (DLL), to maintain a steady lock on the satellite signals. Multiple correlators are implemented to generate correlation plots, allowing for an in-depth analysis of tracking performance. The impact of urban interference, such as multipath and signal blockage, is examined by analyzing the correlation peaks. In urban environments, reduced signal strength and distorted correlation functions can negatively affect tracking stability.
@@ -161,11 +195,9 @@ Navigation Data Decoding is one of the key steps in GNSS receivers, which is use
 
 ## Task 4 – Position and Velocity Estimation
 
-Input:
 `trackResults`: Tracking results, including the correlator output, code phase, carrier frequency, etc. for each channel.
 `settings`: Receiver configuration parameters, such as sampling rate, navigation solution period, altitude mask, etc.
 
-Output:
 `navSolutions`: Navigation solution results, including pseudorange, receiver position, velocity, time, etc.
 `eph`: Satellite ephemeris decoded from navigation data.
 
