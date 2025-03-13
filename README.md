@@ -252,3 +252,18 @@ Navigation solution obtained from raw GPS signal data as shown in figure:
 
 ## Task 5 – Kalman Filter-Based Positioning
 
+To enhance positioning accuracy, an Extended Kalman Filter (EKF) is developed using pseudorange and Doppler measurements. The EKF framework enables dynamic filtering and smoothing of the position and velocity estimates, leading to improved robustness against measurement noise and signal disturbances. The EKF implementation provides refined positioning results and demonstrates its advantages over the WLS approach in challenging environments.
+
+**The EKF algorithm is written in the `KF.m` file.**
+
+**The position processing is written in the `postnavigation.m` file.**
+
+The result of adding the EKF is shown in the figure：
+
+ <p align="center">
+    <img src="/figure/4.jpg" alt="EKF Navigation solution" />
+</p>
+
+## Conclusion
+
+The report details the step-by-step implementation of GNSS signal processing, from acquisition to advanced positioning techniques. The impact of urban interference and multipath effects is analyzed, and the benefits of using Kalman filtering for enhanced accuracy are demonstrated. This work underscores the importance of robust signal processing techniques for reliable GNSS-based navigation.
