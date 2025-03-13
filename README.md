@@ -6,7 +6,7 @@ This repository contains the report and code for Assignment 1 of the AAE6102 Sat
 
 ### Step-by-step instructions
 
-First, you need to put the data files 'Urban.dat' and 'Opensky.bin' in the '~/GPS_L1_CA/data' path. It should looks like:
+First, you need to put the data files `Urban.dat` and `Opensky.bin` in the `~/GPS_L1_CA/data` path. It should looks like:
 
 ```
 GPS_L1_CA/
