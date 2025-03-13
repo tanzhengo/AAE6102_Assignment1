@@ -206,6 +206,23 @@ If the signal is completely shielded, the correlation peak may disappear, causin
 
 ## Task 3 – Navigation Data Decoding
 Navigation Data Decoding is one of the key steps in GNSS receivers, which is used to extract navigation data bits from the tracked satellite signals. Navigation data contains key data such as satellite ephemeris, time information, satellite health status, etc. These data are the basis for calculating user position, velocity and time (PVT).
+**Extracted Parameters for a Sample Satellite (PRN 20):**
+
+- **PRN (Pseudo-Random Number):** 20
+- **Satellite Position (X, Y, Z) in meters:**
+  - X: [150292.77, -18036996.46, -23097527.61, 6106606.07, -22404285.92, -10058685.30, 10623241.46]
+  - Y: [25408951.23, 16570806.91, 13345041.64, 25290124.32, 3641352.36, 20708226.50, 19053666.42]
+  - Z: [8035554.65, 9553530.43, 412700.87, -5342505.70, 13758992.52, -13131481.28, 14883179.78]
+- **Satellite Clock Correction:** 0.00036635 seconds
+- **Transmit Time (GPS Time in seconds):**
+  - Starts at 388458.0076751 and increments sequentially.
+
+ Figure 2 shows the raw data from a GPS receiver. It generates three types of plots: time domain, frequency domain, and histogram.
+
+ <p align="center">
+    <img src="/figure/2.jpg" alt="GPS receiver" />
+</p>
+
 
 ## Task 4 – Position and Velocity Estimation
 
@@ -226,6 +243,12 @@ Comparison with Ground Truth: The estimated positions are converted to geodetic 
 Impact of Multipath Effects: The analysis discusses how multipath effects, caused by signal reflections, impact the WLS solution in different environments:
 Open-Sky Environment: Minimal multipath effects due to dominant line-of-sight signals. The WLS estimation error is small (~5.5 meters).
 Urban Environment: Significant multipath effects due to reflections from buildings, leading to larger errors (~14 meters). Non-line-of-sight reception and distorted signals degrade positioning accuracy.
+
+Navigation solution obtained from raw GPS signal data as shown in figure:
+
+ <p align="center">
+    <img src="/figure/3.jpg" alt="Navigation solution" />
+</p>
 
 ## Task 5 – Kalman Filter-Based Positioning
 
