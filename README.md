@@ -135,6 +135,7 @@ Obstacles such as tall buildings and bridges will block satellite signals, resul
 Blockage will reduce the amplitude of the correlation peak or even cause the signal to be completely lost.
 #### 2.2.2 Effect of interference on correlation peak
 - Effect of multipath interference
+
 Correlation peak distortion:
 Multipath signals will introduce additional correlation peaks, causing the main peak to become wider or offset.
 The symmetry of the correlation peak is destroyed, affecting the estimation accuracy of the code phase and carrier phase.
@@ -143,6 +144,7 @@ Multipath signals will cause the output of the early-late correlator to be asymm
 Change in peak amplitude:
 The superposition of multipath signals may cause the amplitude of the correlation peak to fluctuate.
 - Effect of shielding
+
 Peak amplitude reduction:
 When the signal is shielded, the amplitude of the correlation peak decreases significantly, which may cause signal loss.
 Reduced signal-to-noise ratio:
