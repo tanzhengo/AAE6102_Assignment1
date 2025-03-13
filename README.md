@@ -86,6 +86,7 @@ The results of data acquisition are shown in the figure:
 This table shows the tracking status and parameters of each channel in the GNSS receiver. The following is a detailed analysis of the table content:
 
 <div align="center">
+
 | Channel | PRN |   Frequency   |  Doppler  | Code Offset | Status |
 |-----------|------------------|--------------|--------------|--------------|--------------|
 |       1 |   1 |  1.20258e+03 |    1203   |      3329   |     T  |
@@ -100,6 +101,7 @@ This table shows the tracking status and parameters of each channel in the GNSS 
 |      10 | --- |  ------------ |   -----   |    ------   |   Off  |
 |      11 | --- |  ------------ |   -----   |    ------   |   Off  |
 |      12 | --- |  ------------ |   -----   |    ------   |   Off  |
+
 </div>
 
 Table structure
